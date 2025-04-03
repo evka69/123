@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{layout}"
+      xmlns:th="http://www.thymeleaf.org"
+      lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Каталог продуктов</title>
+    <link rel="stylesheet" href="/css/catalog.css">
+</head>
+<body>
+<div layout:fragment="content" class="">
+    <div class="head2">
+        <div class="search">
+            <img src="/img/logo.png" alt="">
+            <div class="search_poisk">
+                <a href="catalog"><button class="btn_catalog">Каталог</button></a>
+                <input type="text" placeholder="Поиск">
+            </div>
+            <button class="search_btn">
+                <img src="/img/search.png" alt="">
+            </button>
+        </div>
+        <div class="deliver_login">
+            <a href="">
+                <button>Доставка</button>
+            </a>
+            <a href="add-product" style="margin-top: 50px; margin-left: 10px">
+                Добавить продукт
+            </a>
+        </div>
+    </div>
+
+    <div class="conteiner">
+        <div class="title">
+            <h2>Каталог</h2>
+        </div>
+        <div class="content">
+            <div class="list">
+                <a th:href="@{/catalog}"
+                   th:classappend="${#request.getParameter('category') == null} ? 'filter-btn active' : 'filter-btn'">
+                    Все продукты
+                </a>
+                <a th:href="@{/catalog(category='Фрукты')}"
+                   th:classappend="${#request.getParameter('category') == 'Фрукты'} ? 'filter-btn active' : 'filter-btn'">
+                    Фрукты
+                </a>
+                <a th:href="@{/catalog(category='Овощи')}"
+                   th:classappend="${#request.getParameter('category') == 'Овощи'} ? 'filter-btn active' : 'filter-btn'">
+                    Овощи
+                </a>
+                <a th:href="@{/catalog(category='Молочные')}"
+                   th:classappend="${#request.getParameter('category') == 'Молочные'} ? 'filter-btn active' : 'filter-btn'">
+                    Молочные
+                </a>
+                <a th:href="@{/catalog(category='Замороженные')}"
+                   th:classappend="${#request.getParameter('category') == 'Замороженные'} ? 'filter-btn active' : 'filter-btn'">
+                    Замороженные
+                </a>
+                <a th:href="@{/catalog(category='К чаю')}"
+                   th:classappend="${#request.getParameter('category') == 'К чаю'} ? 'filter-btn active' : 'filter-btn'">
+                    К чаю
+                </a>
+            </div>
+
+            <div class="box_flex">
+                <div th:each="product : ${products}" class="box" th:attr="data-category=${product.category}">
+                    <div class="box_img">
+                        <img th:src="@{${product.imagePath}}" th:alt="${product.name}">
+                    </div>
+                    <div class="text">
+                        <div class="check">
+                            <h3><a th:href="@{'/edit-product/' + ${product.id}}" th:text="${product.name}"></a></h3>
+                            <input type="checkbox" th:id="'product' + ${product.id}" class="product-checkbox" />
+                            <label th:for="'product' + ${product.id}" class="checkmark"></label>
+                        </div>
+                        <hr>
+                        <section th:text="'от ' + ${#numbers.formatDecimal(product.price, 1, 2, 'COMMA')} + '₽'"></section>
+                        <article th:text="'Категория: ' + ${product.category}"></article>
+                        <div class="actions">
+                            <a th:href="@{'/edit-product/' + ${product.id}}" class="edit-btn">Редактировать</a>
+                            <a th:href="@{'/delete-product/' + ${product.id}}" class="delete-btn">Удалить</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="catalog_btn">
+            <a href="add-product" class="btn_catalog">
+                <button>Добавить продукт</button>
+            </a>
+        </div>
+    </div>
+</div>
+
+document.addEventListener('DOMContentLoaded', function() {
+const filterButtons = document.querySelectorAll('.filter-btn');
+const productBoxes = document.querySelectorAll('.box');
+
+filterButtons.forEach(button => {
+button.addEventListener('click', function() {
+filterButtons.forEach(btn => btn.classList.remove('active'));
+this.classList.add('active');
+
+const category = this.getAttribute('data-category');
+
+productBoxes.forEach(box => {
+if (category === 'All') {
+box.style.display = 'block';
+} else {
+const boxCategory = box.getAttribute('data-category');
+box.style.display = boxCategory === category ? 'block' : 'none';
+}
+});
+});
+});
+});
+});
+</body>
+</html>

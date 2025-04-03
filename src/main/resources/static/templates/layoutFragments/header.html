@@ -1,0 +1,68 @@
+
+
+<div xmlns:th="http://www.thymeleaf.org"
+     xmlns:sec="http://www.thymeleaf.org/extras/spring-security"
+     th:fragment="header">
+    <link rel="stylesheet" href="/css/header.css">
+<!--    <header>-->
+<!--                <div class="header__logotype">-->
+<!--                    <img src="./img/logo.png" alt="" />-->
+<!--                    <a href="index">RECRUITIUM</a>-->
+<!--                    <div class="header__logotype__line"></div>-->
+<!--                </div>-->
+<!--                <div class="header__navigation">-->
+<!--                    <ul>-->
+<!--                        <li><a href="./job_openings">Поиск вакансий</a></li>-->
+<!--                        <li><a href="./contact">Контакты</a></li>-->
+<!--                        <li><a href="./news">Новости</a></li>-->
+<!--                        <li><a href="#">Об агенстве</a></li>-->
+<!--                        <li><a href="./view-all-categories">Категории</a></li>-->
+<!--                    </ul>-->
+<!--                </div>-->
+<!--                <div class="header__buttons">-->
+<!--                    <div class="header__buttons__application">-->
+<!--                        <a href="./contact.html#form">Оставить заявку</a>-->
+<!--                    </div>-->
+<!--                    <div class="header__buttons__enter">-->
+<!--                        <a th:if="${authenticated}" th:href="@{/logout}">Выйти</a>-->
+<!--                        <a th:unless="${authenticated}" th:href="@{/login}">Войти</a>-->
+<!--                    </div>-->
+<!--                </div>-->
+
+<!--                <div class="toggle_btn">-->
+<!--                    <img src="./img/burger.png" alt="">-->
+<!--                </div>-->
+<!--    </header>-->
+
+
+        <header>
+            <div class="header__logotype">
+                <img src="./img/logo.png" alt="" />
+                <a href="index">GoodFood</a>
+                <div class="header__logotype__line"></div>
+            </div>
+            <div class="header__navigation">
+                <ul>
+                    <li><a href="./.html">Каталог</a></li>
+                    <li><a href="./basket.html">Корзина</a></li>
+                    <li><a href="./contact.html">Контакты</a></li>
+                    <li><a href="#">Профиль</a></li>
+                </ul>
+            </div>
+            <div class="header__buttons">
+                <div class="header__buttons__application">
+                    <a class="cont" href="./contact.html#form">Связаться с нами</a>
+                </div>
+                <div class="header__buttons__enter">
+                    <a class="logg" th:if="${authenticated}" th:href="@{/logout}">Выйти</a>
+                    <a class="logg" th:unless="${authenticated}" th:href="@{/login}">Войти</a>
+                </div>
+            </div>
+
+            <div class="toggle_btn">
+                <img src="./img/burger.png" alt="">
+            </div>
+        </header>
+
+
+</div>

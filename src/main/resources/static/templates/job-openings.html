@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{layout}"
+      lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>поиск вакансий</title>
+    <link rel="stylesheet" href="/css/job-openings.css">
+</head>
+<body>
+<div layout:fragment="content" class="">
+<main>
+    <div class="main__search__block">
+        <div class="main__search__block__form">
+            <h3>Уже видишь себя на <br />определенном месте?</h3>
+            <p>Найди свое место!</p>
+            <div class="main__search__block__form__bottom">
+                <div class="box">
+                    <select>
+                        <option>Категория...</option>
+                        <option value="#develop">Разработка</option>
+                        <option value="#design">Дизайн и UI/UX</option>
+                        <option value="#safety">Инфраструктура и безопасность</option>
+                    </select>
+                </div>
+                <div class="main__search__block__form__bottom__input">
+                    <input type="text" placeholder="Поиск вакансии" />
+                    <button>Найти</button>
+                </div>
+            </div>
+            <img src="./img/Remove-bg.ai_1728971012310.png" alt="" />
+        </div>
+
+        <div class="main__search__block__develop" id="develop">
+            <h2>Разработка</h2>
+            <div class="main__search__block__develop__cards">
+                <div class="main__search__block__develop__cards__row">
+                    <div class="main__search__block__develop__cards__row__card" style="background-image: url(./img/Python.jpg)">
+                        <h4 class="develop__cards__row__card__name">
+                            Программист Python
+                        </h4>
+                        <div class="develop__cards__row__card__right">
+                            <p>
+                                Разработка серверной части веб-приложений, API, алгоритмов
+                                машинного обучения
+                            </p>
+                            <p class="p__second" style="font-weight: 600">от 20 000 ₽</p>
+                            <button>ОТКЛИКНУТЬСЯ</button>
+                        </div>
+                    </div>
+
+                    <div class="main__search__block__develop__cards__row__card" style="background-image: url(./img/java.png)">
+                        <h4 class="develop__cards__row__card__name">
+                            Программист Java
+                        </h4>
+                        <div class="develop__cards__row__card__right">
+                            <p>
+                                Разработка enterprise-приложений, backend систем, мобильных
+                                приложений
+                            </p>
+                            <p class="p__second" style="font-weight: 600">от 25 000 ₽</p>
+                            <button>ОТКЛИКНУТЬСЯ</button>
+                        </div>
+                    </div>
+                    <div class="main__search__block__develop__cards__row__card"
+                         style="background-image: url(./img/Frontend.jpg)">
+                        <h4 class="develop__cards__row__card__name">
+                            Frontend Developer
+                        </h4>
+                        <div class="develop__cards__row__card__right">
+                            <p>
+                                Разработка пользовательского интерфейса (UI) веб-приложений,
+                                используя HTML, CSS, JavaScript и фреймворки
+                            </p>
+                            <p class="p__second" style="font-weight: 600">от 28 000 ₽</p>
+                            <button>ОТКЛИКНУТЬСЯ</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="main__search__block__develop__cards__row">
+                    <div class="main__search__block__develop__cards__row__card"
+                         style="background-image: url(./img/Fullstack.jpg)">
+                        <h4 class="develop__cards__row__card__name">
+                            Fullstack Developer
+                        </h4>
+                        <div class="develop__cards__row__card__right">
+                            <p>
+                                Разработка как frontend, так и backend частей
+                                веб-приложений, знание различных технологий
+                            </p>
+                            <p class="p__second" style="font-weight: 600">от 20 000 ₽</p>
+                            <button>ОТКЛИКНУТЬСЯ</button>
+                        </div>
+                    </div>
+
+                    <div class="main__search__block__develop__cards__row__card" style="background-image: url(./img/Mobile.png)">
+                        <h4 class="develop__cards__row__card__name">
+                            Mobile Developer
+                        </h4>
+                        <div class="develop__cards__row__card__right">
+                            <p>
+                                Разработка мобильных приложений для Android или iOS,
+                                используя соответствующие языки программирования
+                            </p>
+                            <p class="p__second" style="font-weight: 600">от 25 000 ₽</p>
+                            <button>ОТКЛИКНУТЬСЯ</button>
+                        </div>
+                    </div>
+                    <div class="main__search__block__develop__cards__row__card" style="background-image: url(./img/Game.jpg)">
+                        <h4 class="develop__cards__row__card__name">Game Developer</h4>
+                        <div class="develop__cards__row__card__right">
+                            <p>
+                                Разработка игр для различных платформ, включая мобильные, PC
+                                и консоли
+                            </p>
+                            <p class="p__second" style="font-weight: 600">от 28 000 ₽</p>
+                            <button>ОТКЛИКНУТЬСЯ</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="main__search__block__design" id="design">
+            <h2>Дизайн и UI/UX</h2>
+            <div class="main__search__block__develop__cards">
+                <div class="main__search__block__develop__cards__row">
+                    <div class="main__search__block__develop__cards__row__card" style="background-image: url(./img/Python.jpg)">
+                        <h4 class="develop__cards__row__card__name">UI/UX Designer</h4>
+                        <div class="develop__cards__row__card__right">
+                            <p>
+                                Дизайн пользовательского интерфейса и пользовательского
+                                опыта веб-сайтов, мобильных приложений
+                            </p>
+                            <p class="p__second" style="font-weight: 600">от 20 000 ₽</p>
+                            <button>ОТКЛИКНУТЬСЯ</button>
+                        </div>
+                    </div>
+
+                    <div class="main__search__block__develop__cards__row__card" style="background-image: url(./img/web.png)">
+                        <h4 class="develop__cards__row__card__name">
+                            Graphic Designer
+                        </h4>
+                        <div class="develop__cards__row__card__right">
+                            <p>
+                                Создание графических материалов для веб-сайтов, приложений,
+                                презентаций, социальных сетей
+                            </p>
+                            <p class="p__second" style="font-weight: 600">от 25 000 ₽</p>
+                            <button>ОТКЛИКНУТЬСЯ</button>
+                        </div>
+                    </div>
+                    <div class="main__search__block__develop__cards__row__card"
+                         style="background-image: url(./img/Researcher.jpg)">
+                        <h4 class="develop__cards__row__card__name">UX Researcher</h4>
+                        <div class="develop__cards__row__card__right">
+                            <p>
+                                Исследование пользовательского опыта, проведение
+                                юзабилити-тестирования, анализ данных
+                            </p>
+                            <p class="p__second" style="font-weight: 600">от 28 000 ₽</p>
+                            <button>ОТКЛИКНУТЬСЯ</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="main__search__block__safety" id="safety">
+            <h2>Инфраструктура и безопасность</h2>
+            <div class="main__search__block__develop__cards">
+                <div class="main__search__block__develop__cards__row">
+                    <div class="main__search__block__develop__cards__row__card"
+                         style="background-image: url(./img/System_admin.jpg)">
+                        <h4 class="develop__cards__row__card__name">
+                            System Administrator
+                        </h4>
+                        <div class="develop__cards__row__card__right">
+                            <p>
+                                Администрирование серверов, сетей, систем хранения данных,
+                                обеспечение бесперебойной работы IT-инфраструктуры
+                            </p>
+                            <p class="p__second" style="font-weight: 600">от 20 000 ₽</p>
+                            <button>ОТКЛИКНУТЬСЯ</button>
+                        </div>
+                    </div>
+
+                    <div class="main__search__block__develop__cards__row__card"
+                         style="background-image: url(./img/Network.jpeg)">
+                        <h4 class="develop__cards__row__card__name">
+                            Network Engineer
+                        </h4>
+                        <div class="develop__cards__row__card__right">
+                            <p>
+                                Проектирование, настройка и поддержка сетевой
+                                инфраструктуры, обеспечение безопасности сети
+                            </p>
+                            <p class="p__second" style="font-weight: 600">от 25 000 ₽</p>
+                            <button>ОТКЛИКНУТЬСЯ</button>
+                        </div>
+                    </div>
+                    <div class="main__search__block__develop__cards__row__card"
+                         style="background-image: url(./img/security.png)">
+                        <h4 class="develop__cards__row__card__name">
+                            Security Engineer
+                        </h4>
+                        <div class="develop__cards__row__card__right">
+                            <p>
+                                Разработка и реализация мер безопасности для IT-систем,
+                                защита от киберугроз
+                            </p>
+                            <p class="p__second" style="font-weight: 600">от 28 000 ₽</p>
+                            <button>ОТКЛИКНУТЬСЯ</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+</div>
+</body>
+</html>
